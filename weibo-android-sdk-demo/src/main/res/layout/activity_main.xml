@@ -1,54 +1,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        android:textSize="20dp" />
 
     <Button
-        android:id="@+id/feature_oauth"
+        android:id="@+id/regBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
-        android:onClick="onOauth"
-        android:text="@string/weibosdk_demo_feature_oauth" />
+        android:text="注册到微博" />
 
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
     <Button
-        android:id="@+id/feature_share"
+        android:id="@+id/sendImageMsg"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/weibosdk_demo_feature_share" />
+        android:text="发消息" />
     
+<!--     <Button -->
+<!--         android:id="@+id/sendTextMsg" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="发消息" /> -->
+<!--     <Button -->
+<!--         android:id="@+id/sendVideoMsg" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="发消息" /> -->
+    </ScrollView>
     <Button
-        android:id="@+id/social_component"
+        android:id="@+id/newWeibo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/weibosdk_demo_social_component" />
-
-    <Button
-        android:id="@+id/feature_login_logout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/weibosdk_demo_feature_login_logout" />
-    
-    <Button
-        android:id="@+id/feature_open_api"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/weibosdk_demo_feature_open_api" />
-    
-    
-     <Button
-        android:id="@+id/feature_scheme_page"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:visibility="gone"
-        android:text="@string/weibosdk_demo_feature_scheme_page" />
-    
-
+        android:text="是否支持SDK" />
 </LinearLayout>

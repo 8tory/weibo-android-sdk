@@ -28,7 +28,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.android.support:support-v4:22.0.0'
-    compile 'com.github.8tory:weibo-android-sdk-core:2.5.1'
+    compile 'com.github.8tory:weibo-android-sdk-core:3.0.1'
 }
 
 apply from: 'deploy.gradle'

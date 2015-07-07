@@ -18,6 +18,71 @@ dependencies {
 }
 ```
 
+## Usage
+
+* getFriendsTimeline, `/statuses/friends_timeline.json`:
+
+Using Weibo Core SDK:
+
+```java
+WeiboParameters params = new WeiboParameters(appId);
+params.put("access_token", accessToken); // AbsOpenAPI.KEY_ACCESS_TOKEN
+// put ...
+
+new AsyncWeiboRunner(context).requestAsync(
+  "https://api.weibo.com/2" + "/statuses/friends_timeline.json", // AbsOpenAPI.API_SERVER
+  params,
+  "GET", // AbsOpenAPI.HTTPMETHOD_GET
+  new RequestListener() {
+    @Override public void onComplete(String json) {
+    }
+    @Override public void onWeiboException(WeiboException e) {
+    }
+  }
+);
+```
+
+Using Weibo SDK:
+
+```java
+StatusesAPI statusesApi = new StatusesAPI(context, appId, accessToken);
+statusesApi.friendsTimeline(0L, 0L, 10, 1, false, 0, false, new RequestListener() {
+    @Override public void onComplete(String json) {
+    }
+    @Override public void onWeiboException(WeiboException e) {
+    }
+  }
+);
+```
+
+## Weibo Core SDK of javadoc
+
+```java
+public class com.sina.weibo.sdk.net.WeiboParameters {
+  public com.sina.weibo.sdk.net.WeiboParameters(java.lang.String);
+  public java.lang.String getAppKey();
+  public java.util.LinkedHashMap<java.lang.String, java.lang.Object> getParams();
+  public void setParams(java.util.LinkedHashMap<java.lang.String, java.lang.Object>);
+  public void add(java.lang.String, java.lang.String);
+  public void add(java.lang.String, int);
+  public void add(java.lang.String, long);
+  public void add(java.lang.String, java.lang.Object);
+  public void put(java.lang.String, java.lang.String);
+  public void put(java.lang.String, int);
+  public void put(java.lang.String, long);
+  public void put(java.lang.String, android.graphics.Bitmap);
+  public void put(java.lang.String, java.lang.Object);
+  public java.lang.Object get(java.lang.String);
+  public void remove(java.lang.String);
+  public java.util.Set<java.lang.String> keySet();
+  public boolean containsKey(java.lang.String);
+  public boolean containsValue(java.lang.String);
+  public int size();
+  public java.lang.String encodeUrl();
+  public boolean hasBinaryData();
+}
+```
+
 ## How to start
 
 Steps:

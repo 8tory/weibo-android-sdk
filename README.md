@@ -1,5 +1,7 @@
 # Weibo Android SDK
 
+[![Build Status](https://travis-ci.org/8tory/weibo-android-sdk.svg)](https://travis-ci.org/8tory/weibo-android-sdk)
+
 Used to integrate Android apps with Weibo Platform.
 
 ## Installation

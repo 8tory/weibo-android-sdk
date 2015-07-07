@@ -1,14 +1,20 @@
 # Weibo Android SDK
 
-```
-native weibocore so <- weibocore jar (restful framemwork) <- Weibo SDK for android (Weibo Android SDK OpenAPI)
-```
+Used to integrate Android apps with Weibo Platform.
 
-## Contact
+## Installation
 
-* QQ: 248982250
-* QQ: 284084420
-* email: sdk4wb@sina.cn
+```java
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+  compile 'com.github.8tory:weibo-android-sdk:3.1.1'
+}
+```
 
 ## How to start
 
@@ -17,7 +23,7 @@ Steps:
 * Step 1: README
 * Step 2: Demo Application: [WeiboSDKDemo.apk][4]
 * Step 3: Documentation: [WeiboAndroidSdk-V3.1.1.cn.pdf][1]
-* Step 4: Demo Application source code: [Demo][5]
+* Step 4: [Demo Application source code][5]
 
 See Also:
 
@@ -42,8 +48,6 @@ See Also:
 ## Quick Start
 
 ### Overview
-
-Used to integrate Android apps with Weibo Platform.
 
 Details: [WeiboAndroidSdk-V3.1.1.cn.pdf][1]
 
@@ -113,26 +117,24 @@ Weibo SDK provides a simple OpenAPI framework, and encapsulated some APIs, pleas
 
 For 3rd-party integration of Weibo SDK. We have a demonstration with apk and source code.
 
-1. Using `adb install` command to install WeiboSDKDemo.apk
+1. Using `adb install` command to install [WeiboSDKDemo.apk][4]
 2. For Eclipse, import WeiboSDKDemo project.(Details: [WeiboAndroidSdk-V3.1.1.cn.pdf][1])
 3. For Android Studio, import WeiboSDKDemo project. (Details: [WeiboAndroidSdk-V3.1.1.cn.pdf][1])
 
 **NOTICE**: Please replace default debug.keystore or occurs incorrect authentiation. The debug.keysotre is sina official provided. DO NOT compile anthor application with it. Based on security, you should use custom keystore.
 
 
-> For Windows. In C:\Users\XXXXX\\.android, please replace default debug.keystore with Weibo official debug.keystore on Github.
-
-
-> For Unix-like. In $HOME/.android directory, please replace default debug.keystore with Weibo official debug.keystore on Github.
-
-
 ## Directory Structure of WeiboSDK and Demonstration
+
+```
+native weibocore so <- weibocore jar (restful framemwork) <- Weibo SDK for android (Weibo Android SDK OpenAPI)
+```
 
 WeiboSDK now is open partial source for 3rd-party developer. In short, There are three parts:
 
-* **Proprietary**：This `weibosdkcore.jar` includes Weibo authentication, SSO login, sharing, etc. core features. For **V2.5.0+**, Weibo provides RESTful framework for OpenAPI development.
-* **Open Source**：WeiboSDK project(Library) is depended on `weibosdkcore.jar` and simplized with Java API. We welcome 3rd-party to add more API via pull-requests. Using OpenAPI to fetch user information or Weibo-sharing, SSO, etc.
-* **Demonstration**：`WeiboSDKDemo` is depended on WeiboSDK, provides demonstraction of all features and sample code.
+* **Proprietary**: This `weibosdkcore.jar` includes Weibo authentication, SSO login, sharing, etc. core features. For **V2.5.0+**, Weibo provides RESTful framework for OpenAPI development.
+* **Open Source**: WeiboSDK project(Library) is depended on `weibosdkcore.jar` and simplized with Java API. We welcome 3rd-party to add more API via pull-requests. Using OpenAPI to fetch user information or Weibo-sharing, SSO, etc.
+* **Demonstration**: `WeiboSDKDemo` is depended on WeiboSDK, provides demonstraction of all features and sample code.
 
 ------
 
@@ -223,7 +225,7 @@ mAuthInfo = new AuthInfo(this, Constants.APP_KEY, Constants.REDIRECT_URL, Consta
 ### 3. Implement WeiboAuthListener
 
 ```java
-class AuthListener  implements WeiboAuthListener {
+class AuthListener implements WeiboAuthListener {
 
     @Override
     public void onComplete(Bundle values) {
@@ -354,13 +356,20 @@ Regenerate nine-patch by http://romannurik.github.io/AndroidAssetStudio/nine-pat
 
 ## More features
 
-Details：[WeiboAndroidSdk-V3.1.1.cn.pdf][1]
+Details: [WeiboAndroidSdk-V3.1.1.cn.pdf][1]
 
 [1]:https://github.com/sinaweibosdk/weibo_android_sdk/blob/master/%E5%BE%AE%E5%8D%9AAndroid%E5%B9%B3%E5%8F%B0SDK%E6%96%87%E6%A1%A3V3.1.1.pdf
 [2]:https://github.com/sinaweibosdk/weibo_android_sdk/blob/master/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%20FAQ.md
 [3]:https://github.com/sinaweibosdk/weibo_android_sdk/blob/master/WeiboSDK_API-V2.4.0.CHM
 [4]:https://github.com/sinaweibosdk/weibo_android_sdk/blob/master/WeiboSDKDemo_v3.1.1.apk
-[5]:https://github.com/sinaweibosdk/weibo_android_sdk/tree/master/demo-src
-[6]:https://github.com/sinaweibosdk/weibo_android_sdk/edit/master/README.md#%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8
-[7]:https://github.com/sinaweibosdk/weibo_android_sdk/edit/master/README.md#%E4%B8%BE%E4%BE%8B%E4%BD%BF%E7%94%A8%E5%BC%82%E6%AD%A5%E6%8E%A5%E5%8F%A3%E6%9D%A5%E5%8F%91%E9%80%81%E4%B8%80%E6%9D%A1%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E5%BE%AE%E5%8D%9A
+[5]:weibo-android-sdk-demo
+[6]:#usage-of-restful-framework
+[7]:#for-example-using-asynchronized-api-with-one-attachment-of-image
 [8]:http://sinaweibosdk.github.io/weibo_android_sdk/doc/
+
+## Contact
+
+* QQ: 248982250
+* QQ: 284084420
+* email: sdk4wb@sina.cn
+

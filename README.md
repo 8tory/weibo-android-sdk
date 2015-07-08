@@ -83,6 +83,34 @@ public class com.sina.weibo.sdk.net.WeiboParameters {
 }
 ```
 
+```java
+public class com.sina.weibo.sdk.auth.Oauth2AccessToken {
+  public static final java.lang.String KEY_UID;
+  public static final java.lang.String KEY_ACCESS_TOKEN;
+  public static final java.lang.String KEY_EXPIRES_IN;
+  public static final java.lang.String KEY_REFRESH_TOKEN;
+  public static final java.lang.String KEY_PHONE_NUM;
+  public com.sina.weibo.sdk.auth.Oauth2AccessToken();
+  public com.sina.weibo.sdk.auth.Oauth2AccessToken(java.lang.String);
+  public com.sina.weibo.sdk.auth.Oauth2AccessToken(java.lang.String, java.lang.String);
+  public static com.sina.weibo.sdk.auth.Oauth2AccessToken parseAccessToken(java.lang.String);
+  public static com.sina.weibo.sdk.auth.Oauth2AccessToken parseAccessToken(android.os.Bundle);
+  public boolean isSessionValid();
+  public android.os.Bundle toBundle();
+  public java.lang.String toString();
+  public java.lang.String getUid();
+  public void setUid(java.lang.String);
+  public java.lang.String getToken();
+  public void setToken(java.lang.String);
+  public java.lang.String getRefreshToken();
+  public void setRefreshToken(java.lang.String);
+  public long getExpiresTime();
+  public void setExpiresTime(long);
+  public void setExpiresIn(java.lang.String);
+  public java.lang.String getPhoneNum();
+}
+```
+
 ## How to start
 
 Steps:

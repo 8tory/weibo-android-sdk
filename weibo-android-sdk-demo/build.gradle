@@ -13,6 +13,7 @@ apply plugin: 'com.android.application'
 repositories {
     jcenter()
     maven { url "https://jitpack.io" }
+    maven { url "http://dl.bintray.com/8tory/maven" }
 }
 
 android {

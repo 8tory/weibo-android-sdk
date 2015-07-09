@@ -13,6 +13,7 @@ apply plugin: 'com.android.library'
 repositories {
     jcenter()
     maven { url "https://jitpack.io" }
+    maven { url "https://dl.bintray.com/8tory/maven" }
 }
 
 android {
@@ -28,7 +29,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.android.support:support-v4:22.0.0'
-    compile 'com.github.8tory:weibo-android-sdk-core:3.1.1'
+    compile 'com.infstory:weibo-android-sdk-core:3.1.1'
 }
 
 apply from: 'deploy.gradle'

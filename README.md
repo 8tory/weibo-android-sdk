@@ -2,9 +2,27 @@
 
 [![Build Status](https://travis-ci.org/8tory/weibo-android-sdk.svg)](https://travis-ci.org/8tory/weibo-android-sdk)
 
+![](art/weibo-android-sdk.png)
+
 Used to integrate Android apps with Weibo Platform.
 
 ## Installation
+
+via bintray(in progress):
+
+```java
+repositories {
+    maven {
+        url "https://dl.bintray.com/8tory/maven/"
+    }
+}
+
+dependencies {
+  compile 'com.infstory:weibo-android-sdk:3.1.1'
+}
+```
+
+or, via jitpack:
 
 ```java
 repositories {

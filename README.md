@@ -8,7 +8,7 @@ Used to integrate Android apps with Weibo Platform.
 
 ## Installation
 
-via bintray(in progress):
+via bintray:
 
 ```java
 repositories {

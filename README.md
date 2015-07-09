@@ -141,7 +141,7 @@ Steps:
 See Also:
 
 * [FAQ][2]
-* [API][8]
+* [JavaDoc][8]
 
 ------
 
@@ -220,7 +220,7 @@ Weibo SDK provides a simple OpenAPI framework, and encapsulated some APIs, pleas
 
 ------
 
-## API documentation
+## JavaDoc
 
 * http://sinaweibosdk.github.io/weibo_android_sdk/doc
 

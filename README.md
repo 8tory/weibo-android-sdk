@@ -1,5 +1,7 @@
 # Weibo Android SDK
 
+[![Join the chat at https://gitter.im/8tory/weibo-android-sdk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/8tory/weibo-android-sdk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/8tory/weibo-android-sdk.svg)](https://travis-ci.org/8tory/weibo-android-sdk)
 
 ![](art/weibo-android-sdk.png)

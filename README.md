@@ -10,13 +10,11 @@ Used to integrate Android apps with Weibo Platform.
 
 ## Installation
 
-via bintray:
+via jcenter:
 
 ```java
 repositories {
-    maven {
-        url "https://dl.bintray.com/8tory/maven"
-    }
+    jcenter()
 }
 
 dependencies {

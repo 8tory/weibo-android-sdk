@@ -77,6 +77,21 @@ statusesApi.friendsTimeline(0L, 0L, 10, 1, false, 0, false, new RequestListener(
 );
 ```
 
+or using StatusList.RequestListener
+
+```java
+StatusesAPI statusesApi = new StatusesAPI(context, appId, accessToken);
+statusesApi.friendsTimeline(0L, 0L, 10, 1, false, 0, false, new StatusList.RequestListener() {
+    @Override public void onComplete(List<Status> statuses) {
+        // statusAdapter.addAll(statuses);
+        // statusAdapter.notifyDataSetChanged();
+    }
+    @Override public void onWeiboException(WeiboException e) {
+    }
+  }
+);
+```
+
 ## Weibo Core SDK of javadoc
 
 ```java

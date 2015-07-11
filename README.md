@@ -77,7 +77,7 @@ statusesApi.friendsTimeline(0L, 0L, 10, 1, false, 0, false, new RequestListener(
 );
 ```
 
-or using StatusList.RequestListener
+or using Weibo SDK with StatusList.RequestListener:
 
 ```java
 StatusesAPI statusesApi = new StatusesAPI(context, appId, accessToken);

@@ -1,8 +1,9 @@
 # Weibo Android SDK
 
-[![Join the chat at https://gitter.im/8tory/weibo-android-sdk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/8tory/weibo-android-sdk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
+[![Download](https://api.bintray.com/packages/8tory/maven/weibo-android-sdk-core/images/download.svg) ](https://bintray.com/8tory/maven/weibo-android-sdk-core/_latestVersion)
 [![Build Status](https://travis-ci.org/8tory/weibo-android-sdk.svg)](https://travis-ci.org/8tory/weibo-android-sdk)
+![JitPack](https://img.shields.io/github/tag/8tory/weibo-android-sdk.svg?label=JitPack)
+[![Join the chat at https://gitter.im/8tory/weibo-android-sdk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/8tory/weibo-android-sdk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![](art/weibo-android-sdk.png)
 

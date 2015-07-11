@@ -16,6 +16,7 @@
 
 package com.sina.weibo.sdk.openapi.models;
 
+import java.util.List;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -23,6 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.text.TextUtils;
+import com.sina.weibo.sdk.net.ListRequestListener;
 
 /**
  * 微博列表结构。
@@ -34,8 +36,7 @@ import android.text.TextUtils;
 public class StatusList {
     
     /** 微博列表 */
-    public ArrayList<Status> statusList;
-    public Status statuses;
+    public List<Status> statusList;
     public boolean hasvisible;
     public String previous_cursor;
     public String next_cursor;
@@ -68,5 +69,12 @@ public class StatusList {
         }
         
         return statuses;
+    }
+
+    public static abstract class RequestListener implements com.sina.weibo.sdk.net.RequestListener, ListRequestListener<Status> {
+        @Override public void onComplete(String json) {
+            StatusList statusList = StatusList.parse(json);
+            onComplete(statusList.statusList);
+        }
     }
 }

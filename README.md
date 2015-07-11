@@ -235,7 +235,7 @@ Weibo SDK provides a simple OpenAPI framework, and encapsulated some APIs, pleas
 | LogoutAPI   | Revoke permissions|
 | InviteAPI   | Allow invite friends and gifts |
 
-**NOTICE**: We implemented only a part of APIs, because APIs are too huge. For each API implementation and testing was spent a lot of time. So we have priority in APIs implementations such as below tables. In fact, we welcome the pull-request of API implementation on Github. We already simplized endpoints, allow 3rd-party friendly to use OpenAPI via HTTP request. Details: [Weibo-RESTful-framework][6]
+**NOTICE**: We implemented only a part of APIs, because APIs are too huge. For each API implementation and testing was spent a lot of time. So we have priority in APIs implementations such as above tables. In fact, we welcome the pull-request of API implementation on Github. We already simplized endpoints, allow 3rd-party friendly to use OpenAPI via HTTP request. Details: [Weibo-RESTful-framework][6]
 
 ------
 

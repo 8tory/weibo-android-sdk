@@ -67,7 +67,7 @@ StatusesAPI statusesApi = new StatusesAPI(context, appId, accessToken);
 statusesApi.friendsTimeline(0L, 0L, 10, 1, false, 0, false, new RequestListener() {
     @Override public void onComplete(String json) {
         StatusList statusList = StatusList.parse(response);
-        List<Status> statuses = statusList.statuses;
+        List<Status> statuses = statusList.statusList;
         // statusAdapter.addAll(statuses);
         // statusAdapter.notifyDataSetChanged();
     }

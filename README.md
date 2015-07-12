@@ -161,7 +161,7 @@ Steps:
 See Also:
 
 * [FAQ][2]
-* [JavaDoc][8]
+* [JavaDoc](https://jitpack.io/com/github/8tory/weibo-android-sdk/3.1.1/javadoc/index.html), [JavaDoc backup][8]
 
 ------
 
@@ -241,6 +241,10 @@ Weibo SDK provides a simple OpenAPI framework, and encapsulated some APIs, pleas
 ------
 
 ## JavaDoc
+
+* https://jitpack.io/com/github/8tory/weibo-android-sdk/3.1.1/javadoc/index.html
+
+or
 
 * http://sinaweibosdk.github.io/weibo_android_sdk/doc
 

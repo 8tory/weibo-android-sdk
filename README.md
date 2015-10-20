@@ -479,6 +479,59 @@ BINTRAY_KEY=XXX
 ./gradlew clean build bintrayUpload
 ```
 
+## What is difference between sinaweibosdk/weibo_android_sdk and 8tory/weibo-android-sdk
+
+And, why do not make a pull-request?
+
+Purpose:
+
+* Supported gradle build
+* Restructed folder and merged duplicated files
+* Indenpendent opensource and closesource of [8tory/weibo-android-sdk](https://github.com/8tory/weibo-android-sdk) and [8tory/weibo-android-sdk-core](https://github.com/8tory/weibo-android-sdk-core)
+* Deploy `weibo-android-sdk.aar` and `weibo-android-sdk-core.aar` into jcenter and jitpack
+
+Supported gradle build, allows easier installation by the following:
+
+build.gradle:
+
+```
+dependenceis {
+    compile 'com.infstory:weibo-android-sdk:3.1.2'
+    // or core only: compile 'com.infstory:weibo-android-sdk-core:3.1.2'
+}
+```
+
+Indenpendent closesource `weiboSDKCore_3.1.2.jar` as module into [8tory/weibo-android-sdk-core](https://github.com/8tory/weibo-android-sdk-core)
+
+```
+8tory/weibo-android-sdk-core
+├── libs
+│   └── weibo-android-sdk-core-3.1.2.jar
+└── src
+    └── main
+        ├── AndroidManifest.xml
+        └── jniLibs
+            ├── arm64-v8a
+            │   └── libweibosdkcore.so
+            ├── armeabi
+            │   └── libweibosdkcore.so
+            ├── armeabi-v7a
+            │   └── libweibosdkcore.so
+            ├── mips
+            │   └── libweibosdkcore.so
+            ├── mips64
+            │   └── libweibosdkcore.so
+            ├── x86
+            │   └── libweibosdkcore.so
+            └── x86_64
+                └── libweibosdkcore.so
+```
+
+Restructed folder and merged duplicated files:
+
+* Move `demo-src/WeiboSDKDemo` to `weibo-android-sdk-demo` and restructured
+* Move `demo-src/WeiboSDK` to `weibo-android-sdk` and restructured
+
 ## Edition
 
 ```

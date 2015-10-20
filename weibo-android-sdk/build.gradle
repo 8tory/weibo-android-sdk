@@ -5,6 +5,8 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.novoda:bintray-release:0.3.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
     }
 }
 
@@ -28,8 +30,35 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.android.support:support-v4:22.0.0'
-    compile 'com.infstory:weibo-android-sdk-core:3.1.1' // for release
+    compile 'com.infstory:weibo-android-sdk-core:3.1.2' // for release
     //compile 'com.github.8tory:weibo-android-sdk-core:-SNAPSHOT'
 }
 
-apply from: 'deploy.gradle'
+apply plugin: 'com.novoda.bintray-release'
+
+def getRepositoryUsername() {
+    return hasProperty('BINTRAY_USER') ? BINTRAY_USER : ""
+}
+
+def getRepositoryPassword() {
+    return hasProperty('BINTRAY_KEY') ? BINTRAY_KEY : ""
+}
+
+publish {
+    userOrg = '8tory'
+    groupId = 'com.infstory'
+    artifactId = 'weibo-android-sdk'
+    publishVersion = '3.1.2'
+    desc = 'Weibo Android SDK'
+    website = 'https://github.com/8tory/weibo-android-sdk'
+    bintrayUser = getRepositoryUsername()
+    bintrayKey = getRepositoryPassword()
+    dryRun = false
+}
+
+//apply plugin: 'maven'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.8tory'
+
+apply from: 'javadoc.gradle'

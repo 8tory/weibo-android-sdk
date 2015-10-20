@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sina.weibo.sdk.demo"
     android:versionCode="8"
-    android:versionName="3.1.1" >
+    android:versionName="3.1.2" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -92,7 +92,14 @@
             android:windowSoftInputMode="adjustResize"
             android:exported="false" >
         </activity>
-       
+        
+      <!-- 游戏入口  -->
+        <activity android:name="com.sina.weibo.sdk.demo.WBGameActivity" 
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
+        
         <service android:name="com.sina.weibo.sdk.net.DownloadService"
             android:exported="false"></service>
     </application>

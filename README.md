@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.infstory:weibo-android-sdk:3.1.1'
+    compile 'com.infstory:weibo-android-sdk:3.1.2'
 }
 ```
 
@@ -28,9 +28,8 @@ or, via jitpack:
 
 ```java
 repositories {
-    maven {
-        url "https://jitpack.io"
-    }
+    jcenter()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -449,6 +448,36 @@ AsyncWeiboRunner.requestAsync(
 ```
 
 Need to prepare `mAccessToken` and `mListener`.
+
+## Build
+
+debug:
+
+```sh
+./gradlew assembleDebug
+```
+
+release and deploy:
+
+~/.gradle/gradle.properties
+
+```
+NEXUS_USERNAME=X+XXX
+NEXUS_PASSWORD=zXX/+XXX
+
+signing.keyId=XXX
+signing.password=XXX
+signing.secretKeyRingFile=/home/andrew/.gnupg/secring.gpg
+
+DEBUG_PASSWORD=XXX
+
+BINTRAY_USER=yongjhih
+BINTRAY_KEY=XXX
+```
+
+```sh
+./gradlew clean build bintrayUpload
+```
 
 ## Edition
 

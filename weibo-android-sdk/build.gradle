@@ -22,7 +22,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        minSdkVersion 8
+        minSdkVersion 18
         targetSdkVersion 22
     }
 }
@@ -30,8 +30,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.android.support:support-v4:22.0.0'
-    compile 'com.infstory:weibo-android-sdk-core:3.1.2' // for release
+    compile 'com.infstory:weibo-android-sdk-core:3.1.4' // for jcenter release
     //compile 'com.github.8tory:weibo-android-sdk-core:-SNAPSHOT'
+    //compile 'com.github.8tory:weibo-android-sdk-core:3.1.4'
 }
 
 apply plugin: 'com.novoda.bintray-release'
@@ -48,7 +49,7 @@ publish {
     userOrg = '8tory'
     groupId = 'com.infstory'
     artifactId = 'weibo-android-sdk'
-    publishVersion = '3.1.2'
+    publishVersion = '3.1.4'
     desc = 'Weibo Android SDK'
     website = 'https://github.com/8tory/weibo-android-sdk'
     bintrayUser = getRepositoryUsername()

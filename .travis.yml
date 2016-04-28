@@ -1,17 +1,22 @@
 language: android
+
 jdk:
     - oraclejdk7
+
+# as per http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
+sudo: false
+
 android:
   components:
+    - platform-tools
+    - tools
     - build-tools-22.0.1
     - android-22
     - extra-android-support
     - extra-android-m2repository
-  licenses:
-    - '.+'
 
 before_install:
     - export JAVA7_HOME=/usr/lib/jvm/java-7-oracle
     - export JAVA_HOME=$JAVA7_HOME
 script:
-    - ./gradlew clean assemble || ./gradlew --refresh-dependencies clean assemble
+    - ./gradlew clean assemble || ./gradlew clean assemble

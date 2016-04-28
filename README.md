@@ -2,7 +2,7 @@
 
 [![Download](https://api.bintray.com/packages/8tory/maven/weibo-android-sdk/images/download.svg) ](https://bintray.com/8tory/maven/weibo-android-sdk/_latestVersion)
 [![JitPack](https://img.shields.io/github/tag/8tory/weibo-android-sdk.svg?label=JitPack)](https://jitpack.io/#8tory/weibo-android-sdk)
-[![javadoc](https://img.shields.io/github/tag/8tory/weibo-android-sdk.svg?label=javadoc)](https://jitpack.io/com/github/8tory/weibo-android-sdk/3.1.2/javadoc/index.html)
+[![javadoc](https://img.shields.io/github/tag/8tory/weibo-android-sdk.svg?label=javadoc)](https://jitpack.io/com/github/8tory/weibo-android-sdk/3.1.4/javadoc/index.html)
 [![Build Status](https://travis-ci.org/8tory/weibo-android-sdk.svg)](https://travis-ci.org/8tory/weibo-android-sdk)
 [![Join the chat at https://gitter.im/8tory/weibo-android-sdk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/8tory/weibo-android-sdk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -161,7 +161,7 @@ Steps:
 See Also:
 
 * [FAQ][2]
-* [![javadoc](https://img.shields.io/github/tag/8tory/weibo-android-sdk.svg?label=javadoc)](https://jitpack.io/com/github/8tory/weibo-android-sdk/3.1.2/javadoc/index.html), [![javadoc](https://img.shields.io/github/tag/8tory/weibo-android-sdk.svg?label=javadoc-backup)][8]
+* [![javadoc](https://img.shields.io/github/tag/8tory/weibo-android-sdk.svg?label=javadoc)](https://jitpack.io/com/github/8tory/weibo-android-sdk/3.1.4/javadoc/index.html), [![javadoc](https://img.shields.io/github/tag/8tory/weibo-android-sdk.svg?label=javadoc-backup)][8]
 
 ------
 

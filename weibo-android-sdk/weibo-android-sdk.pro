@@ -1,0 +1,1 @@
+-keep class com.sina.weibo.sdk.api.* { *; }

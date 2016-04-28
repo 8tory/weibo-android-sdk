@@ -46,7 +46,15 @@ Using Weibo Core SDK:
 ```java
 WeiboParameters params = new WeiboParameters(appId);
 params.put("access_token", accessToken); // AbsOpenAPI.KEY_ACCESS_TOKEN
-// put ...
+
+// other params
+params.put("since_id", 0L);
+params.put("max_id", 0L);
+params.put("count", 10);
+params.put("page", 1);
+params.put("base_app", false);
+params.put("feature", 0);
+params.put("trim_user", false);
 
 new AsyncWeiboRunner(context).requestAsync(
   "https://api.weibo.com/2" + "/statuses/friends_timeline.json", // AbsOpenAPI.API_SERVER
@@ -65,7 +73,17 @@ Using Weibo SDK:
 
 ```java
 StatusesAPI statusesApi = new StatusesAPI(context, appId, accessToken);
-statusesApi.friendsTimeline(0L, 0L, 10, 1, false, 0, false, new RequestListener() {
+
+// params
+long sinceId = 0L;
+long maxId = 0L;
+int count = 10;
+int page = 1;
+boolean baseApp = false;
+int featureType = 0;
+boolean trimUser = false;
+
+statusesApi.friendsTimeline(sinceId, maxId, count, page, baseApp, featureType, trimUser, new RequestListener() {
     @Override public void onComplete(String json) {
         StatusList statusList = StatusList.parse(response);
         List<Status> statuses = statusList.statusList;
@@ -81,8 +99,17 @@ statusesApi.friendsTimeline(0L, 0L, 10, 1, false, 0, false, new RequestListener(
 or using Weibo SDK with StatusList.RequestListener:
 
 ```java
+// params
+long sinceId = 0L;
+long maxId = 0L;
+int count = 10;
+int page = 1;
+boolean baseApp = false;
+int featureType = 0;
+boolean trimUser = false;
+
 StatusesAPI statusesApi = new StatusesAPI(context, appId, accessToken);
-statusesApi.friendsTimeline(0L, 0L, 10, 1, false, 0, false, new StatusList.RequestListener() {
+statusesApi.friendsTimeline(sinceId, maxId, count, page, baseApp, featureType, trimUser, new StatusList.RequestListener() {
     @Override public void onComplete(List<Status> statuses) {
         // statusAdapter.addAll(statuses);
         // statusAdapter.notifyDataSetChanged();

@@ -31,8 +31,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.android.support:support-v4:22.0.0'
-    compile 'com.infstory:weibo-android-sdk-core:3.1.4' // for jcenter release
-    //compile 'com.github.8tory:weibo-android-sdk-core:-SNAPSHOT'
+    //compile 'com.infstory:weibo-android-sdk-core:3.1.4' // for jcenter release
+    compile 'com.github.8tory:weibo-android-sdk-core:-SNAPSHOT'
     //compile 'com.github.8tory:weibo-android-sdk-core:3.1.4'
 }
 

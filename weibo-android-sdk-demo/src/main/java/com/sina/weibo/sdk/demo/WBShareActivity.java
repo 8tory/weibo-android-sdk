@@ -25,6 +25,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -144,18 +145,20 @@ public class WBShareActivity extends Activity implements OnClickListener, IWeibo
      */
     @Override
     public void onResponse(BaseResponse baseResp) {
-        switch (baseResp.errCode) {
-        case WBConstants.ErrorCode.ERR_OK:
-            Toast.makeText(this, R.string.weibosdk_demo_toast_share_success, Toast.LENGTH_LONG).show();
-            break;
-        case WBConstants.ErrorCode.ERR_CANCEL:
-            Toast.makeText(this, R.string.weibosdk_demo_toast_share_canceled, Toast.LENGTH_LONG).show();
-            break;
-        case WBConstants.ErrorCode.ERR_FAIL:
-            Toast.makeText(this, 
-                    getString(R.string.weibosdk_demo_toast_share_failed) + "Error Message: " + baseResp.errMsg, 
-                    Toast.LENGTH_LONG).show();
-            break;
+        if(baseResp!= null){
+            switch (baseResp.errCode) {
+            case WBConstants.ErrorCode.ERR_OK:
+                Toast.makeText(this, R.string.weibosdk_demo_toast_share_success, Toast.LENGTH_LONG).show();
+                break;
+            case WBConstants.ErrorCode.ERR_CANCEL:
+                Toast.makeText(this, R.string.weibosdk_demo_toast_share_canceled, Toast.LENGTH_LONG).show();
+                break;
+            case WBConstants.ErrorCode.ERR_FAIL:
+                Toast.makeText(this, 
+                        getString(R.string.weibosdk_demo_toast_share_failed) + "Error Message: " + baseResp.errMsg, 
+                        Toast.LENGTH_LONG).show();
+                break;
+            }
         }
     }
 
@@ -439,7 +442,7 @@ public class WBShareActivity extends Activity implements OnClickListener, IWeibo
     private ImageObject getImageObj() {
         ImageObject imageObject = new ImageObject();
         BitmapDrawable bitmapDrawable = (BitmapDrawable) mImageView.getDrawable();
-        //        设置缩略图。 注意：最终压缩过的缩略图大小不得超过 32kb。
+        //设置缩略图。 注意：最终压缩过的缩略图大小不得超过 32kb。
         Bitmap  bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_logo);
         imageObject.setImageObject(bitmap);
         return imageObject;

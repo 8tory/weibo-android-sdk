@@ -23,6 +23,11 @@ import com.sina.weibo.sdk.net.AsyncWeiboRunner;
 import com.sina.weibo.sdk.net.RequestListener;
 import com.sina.weibo.sdk.net.WeiboParameters;
 import com.sina.weibo.sdk.utils.LogUtil;
+import com.sina.weibo.sdk.openapi.models.*;
+import com.sina.weibo.sdk.net.ListRequestListener;
+import java.util.List;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * 微博 OpenAPI 的基类，每个接口类都继承了此抽象类。
@@ -56,6 +61,26 @@ public abstract class AbsOpenAPI {
         mContext = context;
         mAppKey = appKey;
         mAccessToken = accessToken;
+    }
+
+    public abstract class SimpleRequestListener<T> implements RequestListener, ListRequestListener<T> {
+        @Override public void onComplete(String json) {
+            onComplete(parse(json, (T) null));
+        }
+
+        private List<Status> parse(String json, Status defValue) {
+            StatusList statusList = StatusList.parse(json);
+            return statusList.statusList;
+        }
+
+        private List<Comment> parse(String json, Comment defValue) {
+            CommentList list = CommentList.parse(json);
+            return list.commentList;
+        }
+
+        private List<T> parse(String json, T defValue) {
+            return null;
+        }
     }
 
     /**

@@ -458,6 +458,7 @@ protected void onCreate(Bundle savedInstanceState) {
     mAuthInfo = new AuthInfo(mActivity, appKey, redirectUrl, scope);
     mSsoHandler = new SsoHandler(mActivity, mAuthInfo);
 
+    // You can move this into corresponding place, such as `onLoginButtonClickListener(v -> {})`
     if (getPreferences(MODE_PRIVATE).getString("access_token", null) == null) {
         mSsoHandler.authorize(new WeiboAuthListener {
             @Override

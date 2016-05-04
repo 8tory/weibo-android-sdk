@@ -10,6 +10,8 @@
 
 Used to integrate Android apps with Weibo Platform.
 
+And we have a better alternative: https://github.com/8tory/SimpleWeibo
+
 ## Installation
 
 via jcenter:

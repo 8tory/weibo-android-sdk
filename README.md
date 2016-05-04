@@ -442,6 +442,57 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
+For example:
+
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    // ...
+
+    mActivity = this;
+    final String appKey = "2045436852";
+    final String redirectUrl = "https://api.weibo.com/oauth2/default.html";
+    final String scope = "";
+    mAuthInfo = new AuthInfo(mActivity, appKey, redirectUrl, scope);
+    mSsoHandler = new SsoHandler(mActivity, mAuthInfo);
+
+    if (getPreferences(MODE_PRIVATE).getString("access_token", null) == null) {
+        mSsoHandler.authorize(new WeiboAuthListener {
+            @Override
+            public void onComplete(Bundle values) {
+                Oauth2AccessToken token = Oauth2AccessToken.parseAccessToken(values);
+                if (token.isSessionValid()) {
+                    getPreferences(MODE_PRIVATE).edit()
+                        .putString("uid", token.getUid())
+                        .putString("access_token", token.getToken())
+                        .putString("refresh_token", token.getRefreshToken())
+                        .putString("expires_in", token.getExpiresTime())
+                        .commit();
+                }
+            }
+
+            @Override
+            public void onCancel() {
+            }
+
+            @Override
+            public void onWeiboException(WeiboException e) {
+            }
+        });
+    }
+}
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (mSsoHandler != null) {
+        mSsoHandler.authorizeCallBack(requestCode, resultCode, data);
+    }
+}
+```
+
 ## Usage of RESTful framework
 
 For V2.5.0+, We provides synchronized and asynchronized APIs:

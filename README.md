@@ -14,15 +14,13 @@ And we have a better api wrapper based on this project: https://github.com/8tory
 
 ## What is difference between sinaweibosdk/weibo_android_sdk and 8tory/weibo-android-sdk
 
-And, why did not make a pull-request?
-
 Purpose:
 
 * Support gradle build
 * Support jcenter or jitpack dependency repository
+* Support proguard as comsumer
 * Restruct folder and merged duplicated files
 * Indenpendent opensource and closesource of [8tory/weibo-android-sdk](https://github.com/8tory/weibo-android-sdk) and [8tory/weibo-android-sdk-core](https://github.com/8tory/weibo-android-sdk-core)
-* Deploy `weibo-android-sdk.aar` and `weibo-android-sdk-core.aar` into jcenter and jitpack
 
 ## Installation
 

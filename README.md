@@ -10,7 +10,19 @@
 
 Used to integrate Android apps with Weibo Platform.
 
-And we have a better alternative: https://github.com/8tory/SimpleWeibo
+And we have a better api wrapper based on this project: https://github.com/8tory/SimpleWeibo
+
+## What is difference between sinaweibosdk/weibo_android_sdk and 8tory/weibo-android-sdk
+
+And, why did not make a pull-request?
+
+Purpose:
+
+* Support gradle build
+* Support jcenter or jitpack dependency repository
+* Restruct folder and merged duplicated files
+* Indenpendent opensource and closesource of [8tory/weibo-android-sdk](https://github.com/8tory/weibo-android-sdk) and [8tory/weibo-android-sdk-core](https://github.com/8tory/weibo-android-sdk-core)
+* Deploy `weibo-android-sdk.aar` and `weibo-android-sdk-core.aar` into jcenter and jitpack
 
 ## Installation
 
@@ -560,27 +572,7 @@ BINTRAY_KEY=XXX
 ./gradlew clean build bintrayUpload
 ```
 
-## What is difference between sinaweibosdk/weibo_android_sdk and 8tory/weibo-android-sdk
-
-And, why do not make a pull-request?
-
-Purpose:
-
-* Supported gradle build
-* Restructed folder and merged duplicated files
-* Indenpendent opensource and closesource of [8tory/weibo-android-sdk](https://github.com/8tory/weibo-android-sdk) and [8tory/weibo-android-sdk-core](https://github.com/8tory/weibo-android-sdk-core)
-* Deploy `weibo-android-sdk.aar` and `weibo-android-sdk-core.aar` into jcenter and jitpack
-
-Supported gradle build, allows easier installation by the following:
-
-build.gradle:
-
-```
-dependenceis {
-    compile 'com.infstory:weibo-android-sdk:3.1.4'
-    // or core only: compile 'com.infstory:weibo-android-sdk-core:3.1.4'
-}
-```
+## Edition
 
 Indenpendent closesource `weiboSDKCore_3.1.4.jar` as module into [8tory/weibo-android-sdk-core](https://github.com/8tory/weibo-android-sdk-core)
 
@@ -612,8 +604,6 @@ Restructed folder and merged duplicated files:
 
 * Move `demo-src/WeiboSDKDemo` to `weibo-android-sdk-demo` and restructured
 * Move `demo-src/WeiboSDK` to `weibo-android-sdk` and restructured
-
-## Edition
 
 ```
 AAPT: /home/weibo/android/weibo_android_sdk/weibo-demo/build/intermediates/exploded-aar/weibo_android_sdk/weibo-sdk/unspecified/res/drawable-ldpi/ic_com_sina_weibo_sdk_logo.png: libpng warning: iCCP: Not recognizing known sRGB profile that has been edited
